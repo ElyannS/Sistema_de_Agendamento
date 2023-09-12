@@ -1,0 +1,205 @@
+.agenda{
+    background-color: #292929;
+    padding: 60px 0;
+    .container{
+        h1{
+            font-family: 'Montserrat Bold';
+            font-size: 23px;
+            margin-bottom: 50px;
+            text-align: center;
+
+            @include tablet{
+                text-align: initial;
+            }
+            @include desktop{
+                text-align: initial;
+            }
+        }
+        .itens{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+            @include tablet{
+                justify-content: space-between;
+            }
+            @include desktop{
+                justify-content: space-between;
+            }
+            .item{
+                max-width: 220px;
+                margin: 0px 50px 80px;
+                &:last-child{
+                    margin:0px 50px 20px;
+                }
+                .image-container {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 20px;
+                    img {
+                      display: block;
+                      max-width: 100%;
+                      height: auto;
+                      cursor: pointer;
+                    }
+                  
+                    .input-container {
+                      position: absolute;
+                      top: 0;
+                      right: 0;
+                      padding: 0px 0px 10px 10px;
+                    }
+                }
+                .image-container.checked {
+                    img {
+                      filter: brightness(70%); /* Aplica o filtro de brilho quando o input é marcado */
+                    }
+                }
+                .texto{
+                    text-align: center;
+                    h2{
+                        font-family: 'Montserrat Medium';
+                        font-size: 18px;
+                    }
+                    p{
+                        font-family: 'Montserrat Medium';
+                    }
+                }
+                @include tablet{
+                    margin: 20px;
+                }
+                @include desktop{
+                    margin: 20px;
+                }
+            }
+        }
+        .servicos-select{
+            margin-bottom: 50px;
+            .container-select-button{
+                
+                select{
+                    width: 100%;
+                    border: 2px solid $color_destaque;
+                    border-radius: 10px;
+                    background-color: transparent;
+                    color: #fff;
+                    font-size: 16px;
+                    padding: 15px 0;
+                    margin-bottom: 25px;
+                    @include tablet{
+                        width: 25%;
+                    }
+                    @include desktop{
+                        width: 25%;
+                    }
+                    option{
+                        background-color: #292929;
+                    }
+                }
+            }
+        }
+    }
+    .horarios{
+        .data{
+            input{
+                border: 2px solid $color_destaque;
+                border-radius: 10px;  
+                font-size: 16px;
+                background-color: #292929;
+                color: #fff;
+                width: 100%;
+                padding: 13px 0px;
+                margin-bottom: 25px;
+                @include tablet{
+                    width: 25%;
+                }
+                @include desktop{
+                    width: 25%;
+                }
+            }
+        }
+        .select-horario{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-bottom: 50px;
+            .btn-horario{
+                border: 2px solid $color_destaque;
+                display: block;
+                text-align: center;
+                border-radius: 10px; 
+                background-color: #292929; 
+                color: #fff;
+                width: 100%;
+                padding: 13px 0px;
+                margin: 10px 0.5px;
+                cursor: pointer;
+                &:hover{
+                    background-color: $color_destaque;
+                }
+                @include tablet{
+                    width: 25%;
+                }
+                @include desktop{
+                    width: 25%;
+                }
+            }
+            .btn-horario.checked{
+                background-color: $color_destaque; 
+            }
+        }
+    }
+    .dados-cliente{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 80px;
+        input{
+            border: 2px solid $color_destaque;
+            border-radius: 10px;  
+            background-color: #292929;
+            font-size: 16px;
+            color: #fff;
+            width: 100%;
+            padding: 13px 0px;
+            margin-bottom: 25px;
+            @include tablet{
+                width: 48%;
+                &:first-child{
+                    width: 100%;
+                }
+            }
+            @include desktop{
+                width: 48%;
+                &:first-child{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .btn{
+        button{
+            width: 100%;
+            border: 2px solid $color_destaque;
+            border-radius: 10px;
+            background-color: transparent;
+            font-size: 16px;
+            display: block;
+            margin: 0 0 15px 0;
+            transition: .30s;
+            color: #fff;
+            padding: 13px 0px;
+            &:hover{
+                background-color: $color_destaque;
+            }
+            @include tablet{
+                width: 25%;
+            }
+            @include desktop{
+                width: 25%;
+            }
+        }
+    }
+} 

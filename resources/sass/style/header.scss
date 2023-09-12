@@ -1,0 +1,179 @@
+
+.admin{
+    background-color: #fff;
+}
+.admin header{
+    background-color: #000;
+    position: relative;
+    .container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .left{
+            a{
+                svg{
+                    font-size: 35px;
+                    cursor: pointer;
+                    transition: .30s;
+                    &:hover{
+                        color: $color_destaque;
+                    }
+                }
+            }
+            @include desktop{
+                visibility: hidden;
+            }
+        }
+        .right{
+            .menu{
+                ul{
+                    li{
+                        display: inline-flex;
+                        align-items: center;
+                        position: relative;
+                        cursor: pointer;
+                        i{
+                            font-size: 14px;
+                            margin: 0 5px;
+                        }
+                        img{
+                            width: 50px;
+                            height: 50px;
+                            border: 2px solid #fff;
+                            border-radius: 50%;
+                            overflow: hidden;
+                        }
+                        .dropdown{
+                            position: absolute;
+                            width: 100%;
+                            min-width: 170px;
+                            top: 100%;
+                            right: 0;
+                            padding: 15px 0px;
+                            display: inline-flex;
+                            flex-direction: column;
+                            background-color: #393939;
+                            visibility: hidden;
+                            transition: .30s;
+                            box-shadow: 0px 3px 30px -1px rgba(0,0,0,0.52);
+                            z-index: 10;
+                            li{
+                                padding: 5px 20px;
+                                cursor: pointer;
+                                transition: .30s;
+                                &:hover{
+                                    background-color: #292929;
+                                }
+                            }
+                        }
+                        &:hover .dropdown{
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .menu_lateral{
+        background-color: #393939;
+        box-shadow: 0px 3px 30px -1px rgba(0,0,0,0.52);
+        position: fixed;
+        overflow-y: auto;
+        flex-flow: column;
+        min-height: initial;
+        width: 250px;
+        height: 100vh;
+        min-height: 600px;
+        left: -270px;
+        top: 0;
+        transition: .30s;
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: column;
+        z-index: 1;
+        @include desktop{
+            left: 0px;
+        }
+        &.active{
+            left: 0px;
+            .close{
+                width: calc(100vw - 250px);
+            }
+        }
+        .top{
+            img{
+                margin: 0 auto;
+                display: block;
+            }
+            hr{
+                margin: 20px 0px;
+                color: #fff;
+            }
+            ul{
+                text-align: left;
+                li{
+                    transition: .30s;
+                    a{
+                        padding: 8px 10px;
+                        display: block;
+                        width: 100%;
+                        svg{
+                            font-size: 20px;
+                            margin-right: 10px;
+                        }
+                    }
+                    &.nome_categoria{
+                        color: #bebebe;
+                        border-bottom: 1px solid #bebebe;
+                        margin-bottom: 5px;
+                        padding: 8px 10px;
+                        cursor: default;
+                        &:hover{
+                            background-color: transparent;
+                        }
+                    }
+                    &:hover{
+                        background-color: #000;
+                    }
+                    &.active{
+                        background-color: #000;
+                    }
+                }
+            }
+        }
+        .bottom{
+            font-size: 12px;
+            padding: 10px 10px;
+            text-align: center;
+        }
+        .close{
+            position: fixed;
+            width: 0px;
+            left: 250px;
+            height: 100vh;
+            top: 0;
+            background-color: #0006;
+            text-align: right;
+            overflow: hidden;
+            i{
+                font-size: 35px;
+                padding: 5px 15px;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+                transition: .30s;
+                &:hover{
+                    color: $color_destaque;
+                }
+            }
+            @include desktop{
+                display: none;
+            }
+        }
+    }
+}
